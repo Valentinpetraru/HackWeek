@@ -1,0 +1,31 @@
+
+<div class="tot">
+
+  <button type="button" (click)="getHero()"  class="btn btn-primary">Genera Attività</button>
+
+  <div class="main"*ngFor="let item of list" >
+  <div class="title">{{item.activity}}</div>
+  <div class="inp" >
+    <div class="left">Difficoltà:</div>
+    <div class="right">{{item.accessibility}}</div>
+  </div>
+  <div class="inp">
+    <div class="left">Tipo:</div>
+    <div class="right">{{item.type}}</div>
+  </div>
+  <div class="inp">
+    <div class="left">Partecipanti:</div>
+    <div class="right">{{item.participants}}</div>
+  </div>
+  <div class="inp">
+    <div class="left">Prezzo:</div>
+    <div class="right">{{item.price}}</div>
+  </div>
+  <div class="inp">
+    <div class="left">Link:</div>
+    <div class="right">{{item.link}}</div>
+  </div>
+</div>
+
+<button type="button" (click)="save()" class="btn btn-warning">Salva Preferito</button>
+</div>
