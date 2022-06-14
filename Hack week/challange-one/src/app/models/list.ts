@@ -2,8 +2,8 @@ export interface IList{
   activity: string;
   type: string;
   participants: string;
-  price: string;
+  price: number;
   link: string;
   key: string;
-  accessibility: string;
+  accessibility: number;
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IList } from 'src/app/models/list';
 
 @Component({
   selector: 'app-favorite-activity',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoriteActivityComponent implements OnInit {
 
+  listOfItems: IList[] = []
+@Output() deleteItem = new EventEmitter<IList>()
+
+ @Input() pref!:IList[];
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
+
+
+
+deleteItemOfTable(value:any){
+  this.deleteItem.emit(value)
+}
 
 }

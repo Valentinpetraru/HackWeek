@@ -7,7 +7,11 @@
   <div class="title">{{item.activity}}</div>
   <div class="inp" >
     <div class="left">Difficoltà:</div>
-    <div class="right">{{item.accessibility}}</div>
+    <div class="right">
+      <div *ngIf="item.accessibility < 0.3">Bassa</div>
+      <div *ngIf="item.accessibility > 0.31 && item.accessibility < 0.5">Media</div>
+      <div *ngIf="item.accessibility > 0.5">Alta</div>
+    </div>
   </div>
   <div class="inp">
     <div class="left">Tipo:</div>
@@ -23,9 +27,11 @@
   </div>
   <div class="inp">
     <div class="left">Link:</div>
-    <div class="right">{{item.link}}</div>
+    <div class="right" *ngIf="item.link !== ''">{{item.link}}</div>
+    <div class="right" *ngIf="item.link === ''">Nessun link correlato</div>
   </div>
+
+  <button type="button" (click)="save(item)"  class="btn btn-warning">Salva Preferito</button>
 </div>
 
-<button type="button" (click)="save()" class="btn btn-warning">Salva Preferito</button>
 </div>

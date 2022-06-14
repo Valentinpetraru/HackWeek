@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { IList } from 'src/app/models/list';
 import { GetskillsService } from 'src/app/services/getskills.service';
 
@@ -10,7 +10,8 @@ import { GetskillsService } from 'src/app/services/getskills.service';
 export class GenerateActivityComponent implements OnInit {
 
   list:IList[] = []
-  pref: IList[] = []
+
+  @Output() prefOutput = new EventEmitter<IList>()
 
 
 
@@ -25,11 +26,15 @@ export class GenerateActivityComponent implements OnInit {
       this.list = [res]
 
     })
+
+   
   }
 
 
-  save(){
-    this.pref.push(this.list[0])
+
+
+  save(value: any){
+    this.prefOutput.emit(value)
   }
 
 }

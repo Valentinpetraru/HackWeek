@@ -13,13 +13,19 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
+    <tr *ngFor="let item of pref">
+      <td>{{item.activity}}</td>
+      <td>
+        <div *ngIf="item.accessibility < 0.3">Bassa</div>
+        <div *ngIf="item.accessibility > 0.31 && item.accessibility < 0.5">Media</div>
+        <div *ngIf="item.accessibility > 0.5">Alta</div>
+      </td>
+      <td>{{item.type}}</td>
+      <td>{{item.participants}}</td>
+      <td>{{item.price}}</td>
+      <td *ngIf="item.link !== ''">{{item.link}}</td>
+      <td *ngIf="item.link === ''">Nessun link correlato</td>
+      <td><button type="button" (click)="deleteItemOfTable(item)" class="btn btn-danger">Elimina</button></td>
     </tr>
   </tbody>
 </table>

@@ -1,6 +1,6 @@
 <app-nav-bar></app-nav-bar>
 
-<div class="container">
-<app-generate-activity class="left"></app-generate-activity>
-<app-favorite-activity class="right"></app-favorite-activity>
+<div class="container" >
+<app-generate-activity (prefOutput)="addItems($event)" class="left"></app-generate-activity>
+<app-favorite-activity [pref]="prefItems" (deleteItem)="removeItems($event)" class="right"></app-favorite-activity>
 </div>
