@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ListCocktailsComponent } from './cocktail/list-cocktails/list-cocktails.component';
 import { FavoriteCocktailsComponent } from './cocktails/favorite-cocktails/favorite-cocktails.component';
+import { GetCocktailsService } from './get-cocktails.service';
 
 
 @NgModule({
@@ -19,9 +21,10 @@ import { FavoriteCocktailsComponent } from './cocktails/favorite-cocktails/favor
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [GetCocktailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
