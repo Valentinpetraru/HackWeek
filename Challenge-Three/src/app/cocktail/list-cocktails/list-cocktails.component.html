@@ -1,4 +1,27 @@
 <div class="fit-container">
     <input type="text" placeholder="Inserisci una lettera">
-    <button type="button" class="btn btn-primary" (click)="show(value)">Lista Cocktails</button>
+    <button type="button" class="btn btn-primary" (click)="show()" >Lista Cocktails</button>
 </div>
+
+
+    <table class="table table-right container" *ngIf="value">
+      <thead>
+        <tr>
+          <th scope="col">idDrink</th>
+          <th scope="col">strDrink</th>
+          <th scope="col">strCategory</th>
+          <th scope="col">strInstructionsIT</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+
+      </tbody>
+
+    </table>

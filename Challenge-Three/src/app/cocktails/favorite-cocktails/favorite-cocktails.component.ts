@@ -6,13 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./favorite-cocktails.component.css']
 })
 export class FavoriteCocktailsComponent implements OnInit {
-  showList: boolean = false;
+  
   constructor() { }
 
   ngOnInit(): void {
   }
-  show() {
-    this.showList = !this.showList
-  }
+
 }
 
