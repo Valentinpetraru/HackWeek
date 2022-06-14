@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.btn-list {
+    border-radius: 12px;
+    width: fit-content;
+}
+
+.fit-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    gap: 2rem;
+    align-items: center;
+}
+
+.btn-primary {
+    padding: 5px;
+}
+
+input {
+    padding: 5px;
+    border-radius: 2px;
+    color: white;
+    background-color: azure;
+
+}
