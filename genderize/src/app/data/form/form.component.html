@@ -1,0 +1,7 @@
+<div class="form-section">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      
+      <input id="name" type="text" formControlName="name" placeholder="Name" >
+      <button class="button" type="submit" [disabled]="form.invalid">Ricerca</button>
+    </form>
+  </div>
