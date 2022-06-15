@@ -1,6 +1,6 @@
 <div class="fit-container">
-  <input type="text" placeholder="Inserisci una lettera">
-  <button type="button" class="btn btn-primary" (click)="getList()">Lista Cocktails</button>
+  <input class="inp" type="text" #letter placeholder="Inserisci una lettera">
+  <button type="button" class="btn btn-primary" (click)="getList(letter.value)">Lista Cocktails</button>
 </div>
 
 
@@ -15,11 +15,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    <tr *ngFor="let item of arr">
+
+      <td>{{item.idDrink}}</td>
+      <td>{{item.strDrink}}/td>
+      <td>{{item.strCategory}}</td>
+      <td>{{item.strInstructionsIT}}</td>
+      <td><button type="button" class="btn btn-warning" (click)="addPref(item)" style="white-space: no-wrap; padding: 5px">Salva Preferito</button></td>
+
     </tr>
 
   </tbody>

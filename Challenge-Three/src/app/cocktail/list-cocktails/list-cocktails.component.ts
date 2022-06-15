@@ -8,17 +8,24 @@ import { GetCocktailsService } from 'src/app/get-cocktails.service';
 export class ListCocktailsComponent implements OnInit {
   arr: any[] = [];
   value: boolean = false
+
+  @Output() preleva = new EventEmitter<any>()
   constructor(private mamma: GetCocktailsService) { }
+
+
 
   ngOnInit(): void {
   }
-  show() {
-    this.value = true;
-  }
-  getList() {
-    this.mamma.getDrinks().subscribe(response => {
-      this.arr = response;
-      console.log(this.arr)
+
+  getList(value:string) {
+    this.mamma.getDrinks(value).subscribe(response => {
+      this.arr = response.drinks;
+      this.value = true;
+      console.log(this.arr);
     })
+  }
+
+  addPref(value:any){
+   this.preleva.emit(value)
   }
 }

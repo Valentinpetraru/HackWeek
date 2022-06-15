@@ -1,4 +1,5 @@
-<!-- <div class="paradise container ">
+<div class="paradise container " >
+  <h2>Preferiti</h2>
     <table class="table table-left" >
         <thead>
             <tr>
@@ -9,14 +10,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+            <tr *ngFor="let item of list">
+                <td>{{item.idDrink}}</td>
+                <td>{{item.strDrink}}</td>
+                <td>{{item.strCategory}}</td>
+                <td>{{item.strIntructionsIT}}</td>
+                <td><button (click)="removeItem(item)" type="button" class="btn btn-danger">Elimina</button></td>
             </tr>
 
         </tbody>
     </table>
 
-</div> -->
+</div>

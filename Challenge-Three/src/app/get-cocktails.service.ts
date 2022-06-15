@@ -10,7 +10,7 @@ export class GetCocktailsService {
   constructor(private privato: HttpClient) {
 
   }
-  getDrinks(): Observable<any[]> {
-    return this.privato.get<any[]>('https://www.boredapi.com/api/activity/')
+  getDrinks(value:string): Observable<any> {
+    return this.privato.get<any>(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${value}`)
   }
 }
