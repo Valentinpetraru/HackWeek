@@ -1,49 +1,49 @@
-<div class="d-flex flex-column justify-content-center align-items-center gap-4">
-    <div
-      class="table-title d-flex justify-content-center align-items-center text-primary border border-3 border-primary text-center px-3 fw-bold ">
+<div  class="d-flex justify-content-center align-items-center flex-column gap-3">
+    <div id="table-search"
+      class="table-title d-flex justify-content-center align-items-center text-primary border border-3 border-primary text-center px-1 fw-bold ">
       <h3>Tabella<br>Ricerche</h3>
     </div>
-    <div class="container-fluid text-center border border-secondary pb-3"
+    <div class="container-fluid text-center border border-secondary pb-1"
       *ngIf="searchHistory && searchHistory.length > 0">
-      <div class="row">
-        <div class="col-4 col-md-2 d-flex justify-content-center align-items-center px-1 py-3">
+      <div class="row m-2">
+        <div class="col-4 col-md-2 d-flex justify-content-center align-items-center px-1 py-1">
           <span class="fw-bold">Name</span>
         </div>
-        <div class="col-4 col-md-2 d-flex justify-content-center align-items-center px-1 py-3">
+        <div class=" col-md-2 d-flex justify-content-center align-items-center px-1 py-1">
           <span class="fw-bold">Gender</span>
         </div>
-        <div class="col-2 d-md-flex justify-content-center align-items-center px-1 py-3">
+        <div class=" col-2 d-md-flex justify-content-center align-items-center px-1 py-1">
           <span class="fw-bold">Probability</span>
         </div>
-        <div class="col-2  d-md-flex justify-content-center align-items-center px-1 py-3">
+        <div class="  col-2  d-md-flex justify-content-center align-items-center px-1 py-1">
           <span class="fw-bold">Count</span>
         </div>
-        <div class="col-2  d-md-flex justify-content-center align-items-center px-1 py-3">
+        <div class="col-2  d-md-flex justify-content-center align-items-center px-1 py-1">
           <span class="fw-bold">Date</span>
         </div>
-        <div class="col-4 col-md-2 d-flex justify-content-center align-items-center px-1 py-3">
+        <div class="col-md-2 d-flex justify-content-center align-items-center px-1 py-1">
           <span class="fw-bold">Action</span>
         </div>
       </div>
-      <div class="row fw-bold" *ngFor="let search of searchHistory" [ngClass]="(search.probability * 100 > 40 && search.probability * 100 < 70) ? 'text-primary' : 'text-white'"
+      <div id="row" class="row table-hover fw-bold" *ngFor="let search of searchHistory" [ngClass]="(search.probability * 100 > 40 && search.probability * 100 < 70) ? 'text-primary' : 'text-white'"
         [ngStyle]="{'background-color': changeBgColor(search.probability)}">
       
-        <div class="col-md-2 d-flex justify-content-center align-items-center px-1 py-3">
+        <div class="col-md-2 d-flex justify-content-center align-items-center px-1 py-1 ">
           <span>{{search.name }}</span>
         </div>
-        <div class="col-md-2 d-flex justify-content-center align-items-center px-1 py-2">
+        <div class="  col-md-2 d-flex justify-content-center align-items-center px-1 py-1">
           <span>{{search.gender}}</span>
         </div>
-        <div class="col-2 d-md-flex justify-content-center align-items-center px-1 py-2">
+        <div class="col-2 d-md-flex justify-content-center align-items-center px-1 py-1">
           <span>{{search.probability * 100}}%</span>
         </div>
-        <div class="col-2  d-md-flex justify-content-center align-items-center px-1 py-2">
+        <div class="col-2  d-md-flex justify-content-center align-items-center px-1 py-1">
           <span>{{search.count}}</span>
         </div>
-        <div class="col-2 d-md-flex justify-content-center align-items-center px-1 py-2">
+        <div class=" col-2 d-md-flex justify-content-center align-items-center px-1 py-1">
           <span>{{search.date }}</span>
         </div>
-        <div class="col-md-2 d-flex justify-content-center align-items-center px-1 py-2">
+        <div class=" col-md-2 d-flex justify-content-center align-items-center px-1 py-1">
           <button class="btn btn-danger" (click)="deleteElement(search.id)">Delete</button>
         </div>
       </div>

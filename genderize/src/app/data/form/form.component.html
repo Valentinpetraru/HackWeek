@@ -1,7 +1,9 @@
-<div class="form-section">
-    <form [formGroup]="form" (ngSubmit)="submit()">
+<div >
+    <form [formGroup]="form" (ngSubmit)="submit()" class="form-section d-flex flex-column justify-content-sm-center align-items-center b-5 p-3">
       
-      <input id="name" type="text" formControlName="name" placeholder="Name" >
-      <button class="button" type="submit" [disabled]="form.invalid">Ricerca</button>
+      <input id="name" type="text" formControlName="name" placeholder="Inserire nome..." >
+      <button class="btn btn-primary " type="submit" [disabled]="form.invalid">Ricerca</button>
     </form>
+
+    <hr>
   </div>
