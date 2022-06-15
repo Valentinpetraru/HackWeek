@@ -1,5 +1,10 @@
 <app-navbar></app-navbar>
 <div class="contenitore-liste " style="display: flex ;padding: 100px; justify-content: space-between;">
-<app-list-cocktails (preleva)="saveDrinks($event)"></app-list-cocktails>
-<app-favorite-cocktails [list]="listDrinks" (remove)="removeDrinks($event)"></app-favorite-cocktails>
+    <app-list-cocktails (preleva)="saveDrinks($event)"></app-list-cocktails>
+    <div class="boh-container">
+        <h2>Preferiti</h2>
+        <div *ngIf="listDrinks.length < 1">Lista preferiti non disponibile</div>
+        <app-favorite-cocktails [list]="listDrinks" *ngIf="listDrinks.length > 0" (remove)="removeDrinks($event)">
+        </app-favorite-cocktails>
+    </div>
 </div>

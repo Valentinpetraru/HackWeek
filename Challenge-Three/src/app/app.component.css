@@ -1,0 +1,4 @@
+.boh-container {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,18 +1,16 @@
 .paradise {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
 }
 
-td
-{
+td {
   max-width: 200px;
 }
 
 
-table
-{
+table {
   width: 800px;
 }

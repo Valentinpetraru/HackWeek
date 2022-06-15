@@ -7,17 +7,18 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class FavoriteCocktailsComponent implements OnInit {
 
- @Input() list: any[] = []
+  @Input() list: any[] = []
 
- @Output() remove = new EventEmitter<any>()
+  @Output() remove = new EventEmitter<any>()
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
-  removeItem(value:any){
-   this.remove.emit(value)
+  removeItem(value: any) {
+    this.remove.emit(value)
   }
 
 }
